@@ -1,0 +1,29 @@
+{
+  "name": "web_app_minifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . Web_App_Minifier --overwrite --asar --platform=win32 --arch=ia32 --icon=icon.ico --prune=true --out=release-builds",
+    "package-linux": "electron-packager . Web_App_Minifier --overwrite --asar --platform=linux --arch=x64 --icon=icon.png --prune=true --out=release-builds",
+    "package-all": "electron-packager . Web_App_Minifier --overwrite --asar --platform=all --icon=icon.png --prune=true --out=release-builds",
+    "build": "electron-packager . --platform=linux",
+    "dist": "npm run package-mac && npm run package-win && npm run package-linux"
+  },
+  "author": "Sarthak SG",
+  "license": "ISC",
+  "devDependencies": {
+    "@node-minify/clean-css": "^4.0.5",
+    "@node-minify/core": "^4.0.5",
+    "@node-minify/google-closure-compiler": "^4.0.5",
+    "@node-minify/html-minifier": "^4.0.5",
+    "asar": "^0.14.6",
+    "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "npm": "^6.8.0"
+  }
+}

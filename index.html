@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web App Minifier</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="pt-4" id="loading-overlay" hidden>
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            
+        </div>
+        <h5 id="lds-status">
+            Processing </h5>
+        
+    </div>
+    <div class="container pt-5">
+        <form>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02" directory multiple
+                            webkitdirectory>
+                        <label id="lblInput" class="custom-file-label" for="inputGroupFile02">Choose Folder</label>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text" style="cursor:pointer" id="btnMinify">Minify</span>
+                    </div>
+                </div>
+                <h6 id="Note" style="text-align:center">
+                    Note : Backup the folder before running Minifier.
+                </h6>
+            </div>
+        </form>
+        
+        <script>
+            require('./renderer.js')
+        </script>
+    </div>
+</body>
+
+</html>
